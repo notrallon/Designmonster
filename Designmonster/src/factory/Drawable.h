@@ -2,10 +2,11 @@
 
 #include <SFML/Graphics.hpp>
 
+// Drawable is an abstract class for all types of drawables.
 class Drawable {
 public:
-	Drawable();
-	virtual ~Drawable();
+	Drawable() = default;
+	virtual ~Drawable() {}
 
 	virtual void Draw(sf::RenderWindow& window) = 0;
 

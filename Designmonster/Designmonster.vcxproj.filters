@@ -21,10 +21,10 @@
     <ClCompile Include="src\factory\Resourcefactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\factory\Drawable.cpp">
+    <ClCompile Include="src\factory\Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\factory\Sprite.cpp">
+    <ClCompile Include="src\factory\Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -48,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\factory\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factory\Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

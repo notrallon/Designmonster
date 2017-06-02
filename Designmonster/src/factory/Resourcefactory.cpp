@@ -1,28 +1,27 @@
 #include "Resourcefactory.h"
+#include "Sprite.h"
+#include "Text.h"
 
 Resourcefactory::Resourcefactory() {
-	m_FontManager = new FontManager();
-	m_TextureManager = new TextureManager();
 }
 
 Resourcefactory::~Resourcefactory() {
-	delete m_TextureManager;
-	delete m_FontManager;
 }
 
-sf::Drawable* Resourcefactory::Load(std::string path)
-{
-	// Get the line ending
-	std::string fileEnding = path.substr(path.find_last_of(".") + 1);
+Drawable* Resourcefactory::Load(std::string path) {
+	// Return nullptr if the string is empty
+	if (path == "") {
+		return nullptr;
+	}
 
-	if (fileEnding == "png") {
-		sf::Sprite* sprite = new sf::Sprite();
-		sprite->setTexture(*m_TextureManager->RequireResource(path));
-		sprite->setPosition(sf::Vector2f(rand() % 1000, rand() % 500));
-		return sprite;
-	} else if (fileEnding == "ttf") {
-		sf::Text* text = new sf::Text();
-		text->setFont(*m_FontManager->RequireResource(path));
-		return text;
+	// Get the file extension so that we can determine what type of file it is.
+	std::string fileExtension = path.substr(path.find_last_of(".") + 1);
+
+	// Return a new type of drawable depending
+	// on the file extension.
+	if (fileExtension == "png") {
+		return new Sprite(path, &m_TextureManager);
+	} else if (fileExtension == "ttf") {
+		return new Text(path, &m_FontManager);
 	}
 }

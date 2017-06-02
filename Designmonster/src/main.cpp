@@ -1,4 +1,6 @@
 #include "factory/Resourcefactory.h"
+#include "factory/Sprite.h"
+#include "factory/Text.h"
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <vector>
@@ -8,14 +10,16 @@ int main() {
 	window.create({ 1280, 720, 32 }, "Designmonster - Richard Norqvist");
 
 	std::string path1 = "Textures/goku.png";
-	std::string path2 = "Textures/arrow.png";
-	std::string path3 = "Textures/gravestone.png";
+	std::string path2 = "Fonts/Pokemon_Hollow.ttf";
+	std::string path3 = "Fonts/Supersonic_Rocketship.ttf";
 	std::string path4 = "Fonts/Stya.ttf";
+	std::string path5 = "Textures/arrow.png";
+	std::string path6 = "Textures/gravestone.png";
 	// Made this scope just to show what happens when the resource managers destructor runs.
 	{
-		Resourcefactory resFactory;
+		Resourcefactory resources;
 
-		std::vector<sf::Drawable*> drawables;
+		std::vector<Drawable*> drawables;
 		{
 			while (window.isOpen()) {
 				sf::Event evnt;
@@ -27,14 +31,19 @@ int main() {
 					} break;
 
 					case sf::Event::KeyPressed: {
+						std::string path;
 						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
-							drawables.push_back(resFactory.Load(path1));
+							path = path1;
 						} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
-							drawables.push_back(resFactory.Load(path2));
+							path = path2;
 						} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
-							drawables.push_back(resFactory.Load(path3));
+							path = path3;
 						} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
-							drawables.push_back(resFactory.Load(path4));
+							path = path4;
+						} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+							path = path5;
+						} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+							path = path6;
 						} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
 							if (drawables.size() > 0) {
 								delete drawables.back();
@@ -42,6 +51,12 @@ int main() {
 								drawables.pop_back();
 							}
 						}
+
+						Drawable* drawable = resources.Load(path);
+						if (drawable != nullptr) {
+							drawables.push_back(drawable);
+						}
+
 					} break;
 					default:
 						break;
@@ -51,11 +66,12 @@ int main() {
 				window.clear();
 
 				for (auto drawable : drawables) {
-					window.draw(*drawable);
+					drawable->Draw(window);
 				}
 
 				window.display();
 			}
+			// Delete all our drawables when we leave scope.
 			for (auto drawable : drawables) {
 				delete drawable;
 				drawable = nullptr;

@@ -5,9 +5,11 @@
 
 class Sprite : public Drawable {
 public:
-	Sprite(std::string path);
+						Sprite(const std::string& path, TextureManager* texturemanager);
+	virtual				~Sprite() override;
 
-	virtual void Draw(sf::RenderWindow& window) override;
+	virtual void		Draw(sf::RenderWindow& window) override;
 private:
-	sf::Sprite* m_Sprite;
+	sf::Sprite			m_Sprite;
+	TextureManager*		m_TextureManager;
 };

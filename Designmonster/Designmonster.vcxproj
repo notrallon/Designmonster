@@ -125,9 +125,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\factory\Drawable.cpp" />
     <ClCompile Include="src\factory\Resourcefactory.cpp" />
     <ClCompile Include="src\factory\Sprite.cpp" />
+    <ClCompile Include="src\factory\Text.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +135,7 @@
     <ClInclude Include="src\factory\Drawable.h" />
     <ClInclude Include="src\factory\Resourcefactory.h" />
     <ClInclude Include="src\factory\Sprite.h" />
+    <ClInclude Include="src\factory\Text.h" />
     <ClInclude Include="src\flyweight\FontManager.h" />
     <ClInclude Include="src\flyweight\ResourceManager.h" />
     <ClInclude Include="src\flyweight\TextureManager.h" />

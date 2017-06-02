@@ -1,16 +1,17 @@
 #pragma once
 
+#include "Drawable.h"
 #include "../flyweight/TextureManager.h"
 #include "../flyweight/FontManager.h"
 
 class Resourcefactory {
 public:
-	Resourcefactory();
-	~Resourcefactory();
+					Resourcefactory();
+					~Resourcefactory();
 
-	sf::Drawable* Load(std::string path);
+	Drawable*		Load(std::string path);
 
 private:
-	TextureManager*	m_TextureManager;
-	FontManager*	m_FontManager;
+	TextureManager	m_TextureManager;
+	FontManager		m_FontManager;
 };
