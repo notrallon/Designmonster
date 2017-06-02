@@ -9,7 +9,7 @@ public:
 					Resourcefactory();
 					~Resourcefactory();
 
-	Drawable*		Load(std::string path);
+	Drawable*		Load(const std::string& path);
 
 private:
 	TextureManager	m_TextureManager;

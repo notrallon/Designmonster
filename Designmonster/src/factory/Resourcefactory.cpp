@@ -8,8 +8,7 @@ Resourcefactory::Resourcefactory() {
 Resourcefactory::~Resourcefactory() {
 }
 
-Drawable* Resourcefactory::Load(std::string path) {
-	// Return nullptr if the string is empty
+Drawable* Resourcefactory::Load(const std::string& path) {
 	if (path == "") {
 		return nullptr;
 	}

@@ -1,6 +1,8 @@
-﻿  main.cpp
-  Resourcefactory.cpp
+﻿  Resourcefactory.cpp
   Generating Code...
-w:\designmonster\designmonster\src\factory\resourcefactory.cpp(27): warning C4715: 'Resourcefactory::Load': not all control paths return a value
+w:\designmonster\designmonster\src\factory\resourcefactory.cpp(26): warning C4715: 'Resourcefactory::Load': not all control paths return a value
+  Compiling...
+  main.cpp
+  Generating Code...
   Designmonster.vcxproj -> W:\Designmonster\bin\Debug\Designmonster.exe
   Designmonster.vcxproj -> W:\Designmonster\bin\Debug\Designmonster.pdb (Partial PDB)
