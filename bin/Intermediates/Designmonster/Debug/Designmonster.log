@@ -1,8 +1,10 @@
-﻿  Resourcefactory.cpp
+﻿  main.cpp
+  Text.cpp
+w:\designmonster\designmonster\src\factory\text.cpp(7): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Sprite.cpp
+w:\designmonster\designmonster\src\factory\sprite.cpp(7): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Resourcefactory.cpp
   Generating Code...
 w:\designmonster\designmonster\src\factory\resourcefactory.cpp(26): warning C4715: 'Resourcefactory::Load': not all control paths return a value
-  Compiling...
-  main.cpp
-  Generating Code...
   Designmonster.vcxproj -> W:\Designmonster\bin\Debug\Designmonster.exe
   Designmonster.vcxproj -> W:\Designmonster\bin\Debug\Designmonster.pdb (Partial PDB)

@@ -10,22 +10,21 @@
 template<typename Derived, typename T>
 class ResourceManager {
 public:
-	ResourceManager();
+				ResourceManager();
+	virtual		~ResourceManager();
 
-	virtual ~ResourceManager();
-
-	T* RequireResource(const std::string& id);
+	T*			RequireResource(const std::string& id);
 
 	// Decrements the amount a resource is used.
 	// If counter hits 0 it uses Unload to remove the
 	// resource from memory.
-	bool ReleaseResource(const std::string& id);
+	bool		ReleaseResource(const std::string& id);
 
 	// Removes all resources from the heap.
-	void PurgeResources();
+	void		PurgeResources();
 
 protected:
-	T* Load(const std::string& path);
+	T*			Load(const std::string& path);
 
 private:
 	typedef std::unordered_map<std::string, std::pair<T*, uint32>> ResourceContainer;
