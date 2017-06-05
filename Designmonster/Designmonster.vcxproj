@@ -128,6 +128,8 @@
     <ClCompile Include="src\factory\Resourcefactory.cpp" />
     <ClCompile Include="src\factory\Sprite.cpp" />
     <ClCompile Include="src\factory\Text.cpp" />
+    <ClCompile Include="src\flyweight\FontManager.cpp" />
+    <ClCompile Include="src\flyweight\TextureManager.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>

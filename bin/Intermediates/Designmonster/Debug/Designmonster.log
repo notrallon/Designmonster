@@ -1,4 +1,8 @@
 ﻿  main.cpp
+  TextureManager.cpp
+  Generating Code...
+  Compiling...
+  FontManager.cpp
   Text.cpp
 w:\designmonster\designmonster\src\factory\text.cpp(7): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Sprite.cpp

@@ -1,6 +1,7 @@
 #include "factory/Resourcefactory.h"
 #include "factory/Sprite.h"
 #include "factory/Text.h"
+
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <vector>
@@ -9,7 +10,7 @@ int main() {
 	sf::RenderWindow window;
 	window.create({ 1280, 720, 32 }, "Designmonster - Richard Norqvist");
 
-	std::string path1 = "Textures/goku.png";
+	std::string path1 = "Textures/Ladder.png";
 	std::string path2 = "Fonts/Pokemon_Hollow.ttf";
 	std::string path3 = "Fonts/Supersonic_Rocketship.ttf";
 	std::string path4 = "Fonts/Stya.ttf";
